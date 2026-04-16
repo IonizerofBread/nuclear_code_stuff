@@ -1,0 +1,81 @@
+{
+  "name": "Employee",
+  "type": "object",
+  "properties": {
+    "employee_id": {
+      "type": "string",
+      "description": "Unique employee identifier (e.g. CE-0042)"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Full name of the employee"
+    },
+    "department": {
+      "type": "string",
+      "enum": [
+        "Reactor Operations",
+        "Safety & Compliance",
+        "Research & Development",
+        "Security",
+        "Engineering",
+        "Administration",
+        "Medical",
+        "Waste Management"
+      ],
+      "description": "Department assignment"
+    },
+    "role_title": {
+      "type": "string",
+      "description": "Job title"
+    },
+    "clearance_level": {
+      "type": "string",
+      "enum": [
+        "Level 1 - Public",
+        "Level 2 - Internal",
+        "Level 3 - Confidential",
+        "Level 4 - Secret",
+        "Level 5 - Top Secret"
+      ],
+      "description": "Security clearance level"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "On Leave",
+        "Suspended",
+        "Terminated"
+      ],
+      "default": "Active",
+      "description": "Current employment status"
+    },
+    "access_zones": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Facility zones the employee can access"
+    },
+    "hire_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of hire"
+    },
+    "email": {
+      "type": "string",
+      "description": "Employee email address"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes or remarks"
+    }
+  },
+  "required": [
+    "employee_id",
+    "full_name",
+    "department",
+    "clearance_level",
+    "status"
+  ]
+}
