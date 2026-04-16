@@ -1,0 +1,54 @@
+{
+  "name": "SystemAlert",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "pressure_drop",
+        "radiation_spike",
+        "coolant_fault",
+        "security_breach",
+        "power_fluctuation",
+        "emergency_alarm",
+        "alarm_cleared"
+      ],
+      "description": "Type of system alert"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "Info",
+        "Warning",
+        "Critical"
+      ],
+      "default": "Warning"
+    },
+    "message": {
+      "type": "string",
+      "description": "Alert message"
+    },
+    "zone": {
+      "type": "string",
+      "description": "Facility zone where alert originated"
+    },
+    "triggered_by": {
+      "type": "string",
+      "description": "Name of user who triggered (for manual alarms)"
+    },
+    "is_alarm_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, this record represents an active emergency alarm state"
+    },
+    "acknowledged": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "type",
+    "severity",
+    "message"
+  ]
+}
