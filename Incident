@@ -1,0 +1,78 @@
+{
+  "name": "Incident",
+  "type": "object",
+  "properties": {
+    "incident_id": {
+      "type": "string",
+      "description": "Auto-generated incident reference number (e.g. INC-2026-0001)"
+    },
+    "title": {
+      "type": "string",
+      "description": "Short title of the incident"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of what occurred"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ],
+      "description": "Severity level of the incident"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Safety",
+        "Security",
+        "Radiological",
+        "Equipment Failure",
+        "Personnel",
+        "Environmental",
+        "Other"
+      ],
+      "description": "Category of incident"
+    },
+    "location": {
+      "type": "string",
+      "description": "Zone or location where the incident occurred"
+    },
+    "reported_by": {
+      "type": "string",
+      "description": "Name of the reporting employee"
+    },
+    "reporter_id": {
+      "type": "string",
+      "description": "Employee ID of reporter"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Open",
+        "Under Investigation",
+        "Resolved",
+        "Closed"
+      ],
+      "default": "Open",
+      "description": "Current status of the incident"
+    },
+    "involved_personnel": {
+      "type": "string",
+      "description": "Names of involved personnel"
+    },
+    "actions_taken": {
+      "type": "string",
+      "description": "Immediate actions taken"
+    }
+  },
+  "required": [
+    "title",
+    "severity",
+    "category",
+    "location"
+  ]
+}
